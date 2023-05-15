@@ -11,7 +11,7 @@ function App() {
 
   useEffect(() => {
     async function fetchDataAsync(): Promise<void> {
-      const data: any = await getDataAsync();
+      const data: Array<Pokemon> = await getDataAsync();
       setPokemons(data);
     }
     fetchDataAsync();

@@ -1,5 +1,7 @@
-function PokeCard({ pokemon }) {
-  const { abilities, types } = pokemon;
+import React from "react";
+import Pokemon from "../interfaces/Pokemon";
+function PokeCard({ pokemon }: { pokemon: Pokemon }) {
+  const { abilities, types }: Pokemon = pokemon;
 
   return (
     pokemon && (
@@ -25,7 +27,9 @@ function PokeCard({ pokemon }) {
             src={pokemon.sprites.front_default}
             alt={pokemon.name}
           />
-          <div className={`rounded-bottom p-3 bg-${types[0].type.name}-transparent`}>
+          <div
+            className={`rounded-bottom p-3 bg-${types[0].type.name}-transparent`}
+          >
             {abilities.map(({ ability }, idx) => (
               <div key={idx}>
                 <h6 className="card-text text-white"> {ability.name}</h6>
